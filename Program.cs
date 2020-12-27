@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +14,6 @@ namespace Horspool
         static void badCharHeuristic(char[] str, int size, int[] badchar)
         {
             int i;
-
-            // Initialize all occurrences as -1  
             for (i = 0; i < NO_OF_CHARS; i++)
                 badchar[i] = -1;
             for (i = 0; i < size; i++)
@@ -37,7 +35,7 @@ namespace Horspool
                     j--;
                 if (j < 0)
                 {
-                    Console.WriteLine("paterni u gjet ne  = " + s);
+                    Console.WriteLine("Paterni u gjet ne  = " + s);
                     s += (s + m < n) ? m - badchar[txt[s + m]] : 1;
 
                 }
@@ -51,13 +49,10 @@ namespace Horspool
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Ju lutem jepeni tekstin qe deshironi te kerkoni");
+            Console.WriteLine("Shenoni tekstin per kërkim:");
             char[] texti = Console.ReadLine().ToCharArray();
-            Console.WriteLine("Ju lutem jepeni paternin");
+            Console.WriteLine("Shenoni paternin");
             char[] patt = Console.ReadLine().ToCharArray();
-
-            //  char[] txt = "ABAAABCD".ToCharArray();
-            //  char[] pat = "ABC".ToCharArray();
             Search(texti, patt);
             Console.ReadLine();
         }
